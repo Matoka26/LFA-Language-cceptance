@@ -17,19 +17,22 @@ with open("input1.txt" , 'r')as f:
          constraints = f.readline().strip().split()
          for cons in constraints:
              if cons[0] == '!':
-                 dicLitereExp[litera]['!'] = [int(x) for x in cons[1:].split(',')]
+                 dicLitereExp[litera]['!'] = cons[1:].split(',')
              if cons[1] == '-':
-                 dicLitereExp[litera]['>'] = 0
+                 dicLitereExp[litera]['>'] = '-1'
              elif cons[0] == '>':
-                 dicLitereExp[litera]['>'] = int(cons[1:])
+                 dicLitereExp[litera]['>'] = cons[1:]
              if cons[0] == '<':
-                 dicLitereExp[litera]['<'] = int(cons[1:])
+                 dicLitereExp[litera]['<'] = cons[1:]
          #daca nu se specifica nr minim de aparitii al literei pe pozitie o sa fie considerat 0
          if '>' not in dicLitereExp[litera].keys():
-             dicLitereExp[litera][">"] = 0
-
+             dicLitereExp[litera]['>'] = '0'
+            
+            
 
     print(listaLitere)
     print(listaExponenti)
 for litera in dicLitereExp:
     print(litera,"->",dicLitereExp[litera])
+
+##daca nu mi dai bounds pt o litera m-ai spart
