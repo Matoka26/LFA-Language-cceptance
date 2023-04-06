@@ -24,7 +24,9 @@ with open("input1.txt" , 'r')as f:
                  dicLitereExp[litera]['>'] = int(cons[1:])
              if cons[0] == '<':
                  dicLitereExp[litera]['<'] = int(cons[1:])
-
+         #daca nu se specifica nr minim de aparitii al literei pe pozitie o sa fie considerat 0
+         if '>' not in dicLitereExp[litera].keys():
+             dicLitereExp[litera][">"] = 0
 
 
     print(listaLitere)
