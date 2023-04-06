@@ -2,4 +2,4 @@
 INPUT STRUCTURE  
 -order of the letters  
 -exponent of each letter  
--constraints of each unique letter
+-constraints of each unique exponent
