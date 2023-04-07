@@ -11,7 +11,7 @@ with open("gramatica1.txt", 'r')as f:
             elemente = list(listaExponenti[i])
             for caracter in elemente:
                 if ord(caracter) >= 97 and ord(caracter) <= 122 and caracter not in dicLitereExp.keys():
-                    dicLitereExp[caracter] = {'>':'0'} #toate aparitiile de litere trebuie sa fie >-1
+                    dicLitereExp[caracter] = {'>':'-1'} #toate aparitiile de litere trebuie sa fie >-1
 
     constraints = f.read().split("\n") #ai grija sa nu ai un \n de care nu stii
     for cons in constraints:
@@ -24,6 +24,7 @@ with open("gramatica1.txt", 'r')as f:
         if cons[1] == '=':
             dicLitereExp[cons[0]]['='] = cons[2:]      #asta va fi folosit doar cu un OR/AND valoarea este si in < sau >
 
+#citim din alt fisier cuvintele pe care sa le testam
 with open("input1.txt" , 'r')as g:
     listaCuvinte = g.read().split('\n')     #ai grija la \n ala
 
@@ -31,3 +32,19 @@ print(listaLitere)
 print(listaExponenti)
 for litera in dicLitereExp:
     print(litera,"->",dicLitereExp[litera])
+
+#print(listaCuvinte)
+
+for cuvant in listaCuvinte:
+    cateLitere = [0] * (len(listaLitere))
+    i = 0
+    j = 0
+    while i < len(cuvant) and j < len(listaLitere):
+        if cuvant[i] == listaLitere[j]:
+            cateLitere[j] += 1
+            i += 1
+        else:
+            j += 1
+        if j == len(listaLitere):
+            cateLitere = "abort"        #daca o litera nu e in modelul dat papa
+    print(cuvant,"--->",cateLitere)
