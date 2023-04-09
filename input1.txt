@@ -1,5 +1,5 @@
-aabbbcccd
-aaaabbbcccccd
-bbbc
-abbaca
+aabbbcccdd
+aabbbcccad
+abcaddd
 abbde
+abbbaca
