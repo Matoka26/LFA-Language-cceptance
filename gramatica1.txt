@@ -1,7 +1,6 @@
 abcad
-2n 3 2n+1 k l
-n<3
-l<n
+2*n 3 2*m+1 k l
+n>0
 k>0
-k=0
-k!7,5,l
+n=m
+l>-1
