@@ -8,7 +8,7 @@ def ecuatia(ec,rez):
     if ind != len(ec)-1:
         rez = rez - int(ec[ind+1:])
     if ind != 0:
-        rez = rez / int(ec[:ind-1])
+        rez = rez / int(ec[:ind])
     return rez
 
 def getLitera(ec):
